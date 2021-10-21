@@ -10,6 +10,7 @@ mkdir -p "$autolaunch_dir"
 echo Linking scripts to AutoLaunch folder $autolaunch_dir
 
 for script in $(ls *.py); do
-    echo Linking $script...
-    ln -si $script "$autolaunch_dir/$script"
+    echo Copying $script...
+    rm -f "$autolaunch_dir/$script"
+    cp $script "$autolaunch_dir/$script"
 done
